@@ -20,6 +20,11 @@ public class UserRegistrationController {
         this.userService = userService;
     }
 
+    @ModelAttribute("user") // check this annotation
+    public UserRegistrationDto userRegistrationDto() {
+        return new UserRegistrationDto();
+    }
+
     @GetMapping
     public String showRegistrationForm() {
         return "registration";
